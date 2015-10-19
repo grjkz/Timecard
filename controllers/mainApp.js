@@ -1,5 +1,5 @@
 console.log('mainApp.js linked')
-var App = angular.module('App',["ngRoute","appControllers", "Timecards"]);
+var App = angular.module('App',["ngRoute","appControllers", "appServices"]);
 App.config(['$routeProvider', function($routeProvider){
 	$routeProvider
 	.when('/', {

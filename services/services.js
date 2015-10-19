@@ -1,7 +1,8 @@
-var AppServices = angular.module('appServices',[]);
+console.log('services.js linked')
+var AppServices = angular.module('appServices',['ngResource']);
 
-AppServices.factory('TimeCards',[$resource, function($resource) {
+AppServices.factory('TimeCard', ['$resource', function($resource) {
 	return $resource('/timecards', {}, {
-		query: {method: GET, isArray:true}
+		query: {method: "GET", isArray:true}
 	})
 }])
