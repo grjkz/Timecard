@@ -1,12 +1,17 @@
 <div>
+	<div>
+		Filter: <input type="text" ng-model="query">
+	</div>
 	<table style='margin: auto'>
 		<tr>
+			<!-- <th><a href="" ng-click='changeOrder("lname")'>Name</a></th> -->
 			<th><a href="" ng-click='changeOrder("lname")'>Last</a></th>
 			<th><a href="" ng-click='changeOrder("fname")'>First</a></th>
 			<th><a href="" ng-click='changeOrder("timein")'>Time In</a></th>
 			<th><a href="" ng-click='changeOrder("timeout")'>Time Out</a></th>
 		</tr>
-		<tr ng-repeat='timecard in timecards | orderBy:category:reverse'>
+		<tr ng-repeat='timecard in timecards | filter:query | orderBy:category:reverse'>
+			<!-- <td>{{timecard.fullname(timecard)}}</td> -->
 			<td>{{timecard.lname}}</td>
 			<td>{{timecard.fname}}</td>
 			<td>{{timecard.timein}}</td>

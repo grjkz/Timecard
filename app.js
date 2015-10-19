@@ -32,8 +32,8 @@ app.get('/',function(req,res) {
 app.get('/timecards',function(req,res) {
 	// show all timecards
 	db.query("SELECT fname, lname, timein, timeout FROM employees AS e, timecards AS t WHERE e.employee_id = t.employee_id ORDER BY t.timein;", 
-		function(err, rows, fields) {
-		res.send(rows)
+		function(err, results, fields) {
+		res.send(results)
 	})
 })
 
@@ -65,16 +65,24 @@ app.get('/timecards/punchout', function(req,res) {
 	})
 })
 
+app.get('/employees', function(req,res) {
+	db.query("SELECT * FROM employees", function(err,results,fields) {
+		console.log(results)
+		res.send(results)
+	})
+})
+
 app.get('/employees/add', function(req,res) {
-	db.query("INSERT INTO employees SET ?", {fname:req.body.firstName, lname:req.body.lastName, eID:req.body.SSN}, function(err result) {
+	db.query("INSERT INTO employees SET ?", {fname:req.body.firstName, lname:req.body.lastName, eID:req.body.SSN}, function(err,result) {
 		console.log(JSON.stringify(result))
 	})
 })
 
 app.get('/employees/delete', function(req,res) {
 	db.query("SELECT employee_id FROM employees WHERE eID = ? LIMIT 1", req.body.SSN, function(err,result,fields) {
-		
-	}
+		if (err) throw err;
+
+	})
 })
 
 app.get('*', function(req,res) {

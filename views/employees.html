@@ -1,0 +1,12 @@
+<div>
+	<table>
+		<tr>
+			<th>Name</th>
+			<th>eID</th>
+		</tr>
+		<tr ng-repeat="e in employees | filter:query | orderBy:category:"id"">
+			<td>{{e.lname+", "+e.fname}}</td>
+			<th>{{e.eID}}</th>
+		</tr>
+	</table>
+</div>

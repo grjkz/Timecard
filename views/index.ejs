@@ -3,23 +3,27 @@
 <head>
 	<meta charset="UTF-8">
 	<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.js'></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-route.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-resource.js"></script>
 	<title>Time Card App</title>
 </head>
 <body ng-app = 'App'>
 	<input type="text" ng-model='input'>
 	<h1>Hello {{input}}!</h1>
-
-		<div ng-controller="timecardsController">
+	<a href="#timecards">Time Cards</a>
+	<div ng-view></div>
+		<!-- <div ng-controller="timecardsController">
 			<div ng-include="'views/alltimecards.html'"></div>
-		</div>
+		</div> -->
 
-		<div ng-controller="employeesController">
-		</div>
+		<!-- <div ng-controller="employeesController">
+		</div> -->
 		
 		<script scr="/assets/javascript/main.js"></script>
 		<script src="controllers/mainApp.js"></script>
 		<!-- <script src="../models/timecard.js"></script> -->
-		<script src="controllers/employeesController.js"></script>
-		<script src="controllers/timecardsController.js"></script>
+		<!-- <script src="controllers/employeesController.js"></script> -->
+		<!-- <script src="controllers/timecardsController.js"></script> -->
+		<script src="controllers/controllers.js"></script>
 </body>
 </html>
