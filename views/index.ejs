@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.js'></script>
+	<title>Time Card App</title>
+</head>
+<body ng-app = 'App'>
+	<input type="text" ng-model='input'>
+	<h1>Hello {{input}}!</h1>
+
+		<div ng-controller="timecardsController">
+			<div ng-include="'views/alltimecards.html'"></div>
+		</div>
+
+		<div ng-controller="employeesController">
+		</div>
+		
+		<script scr="/assets/javascript/main.js"></script>
+		<script src="controllers/mainApp.js"></script>
+		<!-- <script src="../models/timecard.js"></script> -->
+		<script src="controllers/employeesController.js"></script>
+		<script src="controllers/timecardsController.js"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<div>
+	<table style='margin: auto'>
+		<tr>
+			<th><a href="" ng-click='changeOrder("lname")'>Last</a></th>
+			<th><a href="" ng-click='changeOrder("fname")'>First</a></th>
+			<th><a href="" ng-click='changeOrder("timein")'>Time In</a></th>
+			<th><a href="" ng-click='changeOrder("timeout")'>Time Out</a></th>
+		</tr>
+		<tr ng-repeat='timecard in timecards | orderBy:category:reverse'>
+			<td>{{timecard.lname}}</td>
+			<td>{{timecard.fname}}</td>
+			<td>{{timecard.timein}}</td>
+			<td>{{timecard.timeout}}</td>
+		</tr>
+	</table>
+</div>
