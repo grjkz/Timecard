@@ -1,0 +1,14 @@
+<div class='main'>
+	<form action="">
+		<div class="id-input">
+			<h3>Enter Employee ID:</h3>
+			<input type="text" ng-model='eID' placeholder='1234'>
+			<!-- <input type="text" name="eID" ng-model='eID' placeholder='9999' pattern='[0-9]{4}' title='4 digit ID' required> -->
+		</div>
+		<div class="error-msg"></div>
+		<div class="actions">
+			<button ng-click='punchIn(eID)'>Punch In</button>
+			<button ng-click='punchOut(eID)'>Punch Out</button>
+		</div>
+	</form>
+</div>

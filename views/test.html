@@ -1,0 +1,39 @@
+<div class="test-div">
+	<ul>
+		<div ng-repeat="item in test">
+			<li>
+				{{item.lname}}, {{item.fname}} <br>
+				{{item.eID}}
+			</li>
+			<br>
+		</div>
+	</ul>	
+	<div class="bulk">
+		<h3>Bulk</h3>
+		<p>{{test}}</p>
+	</div>
+
+	<div class="single-query">
+		<h3>Single Query</h3>
+		<p>{{single}}</p>
+		<p>First: {{single.fname}}</p>
+		<p>Last: {{single.lname}}</p>
+		<p>eID: {{single.eID}}</p>
+	</div>
+
+<h1>EmployeeTimecardsController</h1>
+<div ng-controller="EmployeeTimecardsController">
+	<h3>Welcome {{timecards[0].fname+" "+timecards[0].lname}}</h3>
+	
+	<table>
+		<tr>
+			<th>Time In</th>
+			<th>Time Out</th>
+		</tr>
+		<tr ng-repeat="x in timecards | orderBy:'-timein'">
+			<td>{{x.timein}}</td>
+			<td>{{x.timeout}}</td>
+		</tr>
+	</table>
+</div>
+</div>

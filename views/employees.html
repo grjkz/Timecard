@@ -1,12 +1,24 @@
 <div>
+
+	<input type="text" ng-model='lname' placeholder='Last Name'>
+	<input type="text" ng-model='fname' placeholder='First Name'>
+	<input type="text" ng-model='eID' placeholder='Employee ID'>
+	<button ng-click='create(lname,fname,eID)'>Add New Employee</button>
+	
+	<div>
+		Filter: <input type="text" ng-model="query">
+	</div>
+	
 	<table>
 		<tr>
-			<th>Name</th>
-			<th>eID</th>
+			<th><a href="" ng-click='changeOrder("name")'>Name</a></th>
+			<th><a href="" ng-click='changeOrder("eID")'>eID</a></th>
+			<th>Action</th>
 		</tr>
-		<tr ng-repeat="e in employees | filter:query | orderBy:category:"id"">
+		<tr ng-repeat="e in employees | filter:query | orderBy:category:reverse">
 			<td>{{e.lname+", "+e.fname}}</td>
-			<th>{{e.eID}}</th>
+			<td>{{e.eID}}</td>
+			<th><button ng-click='delete(e,$index)'>Delete</button></th>
 		</tr>
 	</table>
 </div>

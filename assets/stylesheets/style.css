@@ -1,0 +1,61 @@
+* {
+	/*border: 1px solid red;*/
+}
+
+.main {
+	text-align: center;
+	/*margin: 0 auto;*/
+}
+
+.clock {
+	display: flex;
+	flex-direction: column;
+}
+
+#click {
+	margin: 1em auto;
+}
+.clock > * {
+	display:flex;
+	justify-content: center;
+}
+
+.date {
+	font-size: 3em;
+}
+
+.id-input {
+	/*display: inline-block;*/
+	width: auto;
+	margin: 0 auto;
+}
+
+.id-input input {
+	text-align: center;
+	margin: 0 auto;
+}
+
+.error-msg {
+	margin: 1em auto;
+	height: 1em;
+	color: red;
+	font-weight: bold;
+	/*display: inline-block;*/
+	/*float: right;*/
+}
+.actions button {
+	margin: 2em;
+}
+
+table {
+	width: 80%;
+	margin: 5% auto;
+	text-align: center;
+	border-collapse: collapse;
+}
+
+table, th, td {
+	border: 1px solid black;
+	padding: 0.5em;
+}
+
